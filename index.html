@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CBJ26 | Copa Brawl Juniors 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <div class="branding">
+        <span class="logo">CBJ26</span>
+        <div>
+          <h1>Copa Brawl Juniors 2026</h1>
+          <p>Inscrição oficial do campeonato de Brawl Stars para jogadores de 12 a 15 anos.</p>
+        </div>
+      </div>
+      <div class="status-panel">
+        <div class="status-item">
+          <span class="status-label">Relógio</span>
+          <strong id="clock">00:00:00</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Bateria</span>
+          <strong id="battery">--%</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Acesso</span>
+          <strong id="deviceType">--</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="intro-card">
+        <div class="card-glow"></div>
+        <div class="intro-text">
+          <h2>Bem-vindo às inscrições do CBJ26</h2>
+          <p>Participe do maior torneio de Brawl Stars para jovens talentos. Preencha seus dados abaixo com atenção e clique em <strong>Inscrever-se</strong> para entrar na lista oficial.</p>
+        </div>
+      </section>
+
+      <section class="registration-card">
+        <h2>Formulário de inscrição</h2>
+        <form id="registrationForm">
+          <label for="playerName">Nome completo</label>
+          <input type="text" id="playerName" name="playerName" placeholder="Seu nome" required />
+
+          <label for="playerAge">Idade</label>
+          <input type="number" id="playerAge" name="playerAge" min="12" max="15" placeholder="12-15" required />
+          <small>Idade permitida: 12 a 15 anos.</small>
+
+          <label for="playerNickname">Nickname no jogo</label>
+          <input type="text" id="playerNickname" name="playerNickname" placeholder="Seu nickname" required />
+
+          <label for="playerId">ID do jogador</label>
+          <input type="text" id="playerId" name="playerId" placeholder="#123456789" pattern="#\d{9,12}" required />
+          <small>Use o formato real do jogo, por exemplo: <strong>#123456789</strong>.</small>
+
+          <label>Sexo</label>
+          <div class="radio-group">
+            <label><input type="radio" name="playerSex" value="Masculino" required /> Masculino</label>
+            <label><input type="radio" name="playerSex" value="Feminino" required /> Feminino</label>
+          </div>
+
+          <button type="submit" id="submitButton" class="button yellow">Inscrever-se</button>
+        </form>
+      </section>
+
+      <section class="list-card">
+        <h2>Jogadores inscritos</h2>
+        <div id="registrationsWrapper">
+          <table id="registrationsTable">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Nickname</th>
+                <th>ID do jogo</th>
+                <th>Sexo</th>
+              </tr>
+            </thead>
+            <tbody id="registrationsBody"></tbody>
+          </table>
+          <p id="emptyMessage">Nenhum jogador inscrito ainda. Seja o primeiro!</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
